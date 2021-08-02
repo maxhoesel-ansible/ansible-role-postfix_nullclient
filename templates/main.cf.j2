@@ -1,0 +1,41 @@
+# {{ ansible_managed }}
+smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+biff = no
+
+append_dot_mydomain = no
+
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+mydestination = $myhostname, localhost.$mydomain, localhost
+relayhost = [{{ postfix_relayhost }}]:{{ postfix_port }}
+mynetworks = 127.0.0.0/8
+inet_interfaces = loopback-only
+recipient_delimiter = +
+
+{% if postfix_tls %}
+smtp_tls_security_level = {% if postfix_tls_verify_cert %}verify{% else %}encrypt{% endif %}
+{% if postfix_tls_custom_cafile %}
+smtp_tls_CAfile = {{ postfix_tls_custom_cafile }}
+{% else %}
+smtp_tls_CAfile = {{ postfix_tls_ca_file }}
+{% endif %}
+{% if postfix_tls_mode == "SSL/TLS" %}
+smtp_tls_wrappermode = yes
+{% endif %}
+{% endif %}
+
+{% if postfix_relayhost_auth %}
+smtp_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous
+smtp_sasl_password_maps = hash:{{ postfix_config_path }}/{{ postfix_sasl_file }}
+{% endif %}
+
+{% if postfix_multi_instance_enable %}
+multi_instance_wrapper = ${command_directory}/postmulti -p --
+multi_instance_enable = yes
+{% if postfix_multi_instance_list %}
+multi_instance_directories = {{ postfix_multi_instance_list | join(', ') }}
+{% else %}
+multi_instance_directories = {{ postfix_found_instance_paths.stdout_lines | join(', ') }}
+{% endif %}
+{% endif %}

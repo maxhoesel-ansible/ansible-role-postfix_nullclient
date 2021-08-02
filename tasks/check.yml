@@ -1,0 +1,20 @@
+- name: Verify that required parameters are set
+  assert:
+    that:
+      - postfix_relayhost is defined
+      - postfix_relayhost | length > 0
+  when: ansible_version.string is version('2.11.1', '<')
+
+- name: Verify that multi-instance list or search pattern is set
+  assert:
+    that: postfix_multi_instance_list or postfix_multi_instance_search
+  when: postfix_multi_instance_enable
+
+- name: Verify that username and passsword are set
+  assert:
+    that:
+      - postfix_relayhost_username is defined
+      - postfix_relayhost_username | length > 0
+      - postfix_relayhost_password is defined
+      - postfix_relayhost_password | length > 0
+  when: postfix_relayhost_auth

@@ -1,0 +1,51 @@
+---
+# tasks file for postfix_nullclient
+- include: check.yml
+
+- name: Load OS-Specific vars
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Postfix is installed
+  package:
+    name: postfix
+    state: present
+
+- name: Look for other postfix instances
+  command: "find {{ postfix_multi_instance_search.split('/').0 }}/ -maxdepth 1 -type d -name 'postfix-*'"
+  check_mode: false
+  changed_when: false
+  register: postfix_found_instance_paths
+  when: not postfix_multi_instance_list
+
+- name: Set relayhost port (TLS)
+  set_fact:
+    postfix_port: "{{ postfix_ports[postfix_tls_mode] }}"
+  when: not postfix_port and postfix_tls
+- name: Set relayhost port (plain)
+  set_fact:
+    postfix_port: 25
+  when: not postfix_port and not postfix_tls
+
+- name: SASL login credentials are present
+  template:
+    src: sasl_passwd.j2
+    dest: "{{ postfix_config_path }}/{{ postfix_sasl_file }}"
+    owner: root
+    group: root
+    mode: "640"
+  notify: rehash sasl_passwd
+
+- name: Postfix config is installed
+  template:
+    src: main.cf.j2
+    dest: "{{ postfix_config_path }}/main.cf"
+    owner: root
+    group: root
+    mode: "644"
+  notify: restart postfix
+
+- name: Postfix service is enabled and running
+  service:
+    name: postfix
+    state: started
+    enabled: true

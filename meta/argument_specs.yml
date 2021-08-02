@@ -1,0 +1,48 @@
+argument_specs:
+  main:
+    short_description: Main entrypoint
+    options:
+      postfix_relayhost:
+        type: str
+        required: yes
+        description: Hostname or IP address of the host to send mails to
+      postfix_port:
+        type: int
+        description: Optionally overwite the automatically selecteed port (see README.md)
+      postfix_relayhost_auth:
+        type: bool
+        default: yes
+        description: Set to yes if you need to login with a username and password
+      postfix_relayhost_username:
+        type: str
+        description: Username used for login on the relayhost. Required if postfix_relayhost_auth is set to true
+      postfix_relayhost_password:
+        type: str
+        description: Password used for login on the relayhost. Required if postfix_relayhost_auth is set to true
+      postfix_tls:
+        type: bool
+        description: Whether to use TLS when connecting to the relayhost
+        default: yes
+      postfix_tls_mode:
+        type: str
+        choices: ["SSL/TLS", "STARTTLS"]
+        description: Whether to use an implicit (SSL/TLS) or explicit/upgrade (STARTTLS) TLS connetion.
+        default: "SSL/TLS"
+      postfix_tls_verify_cert:
+        type: bool
+        default: yes
+        description: Whether to verify the remote TLS cert. Only turn this off if you want to use a self-signed certificate and know what you are doing
+      postfix_tls_custom_cafile:
+        type: str
+        description: Optionally provide a custom CA cert for the relayhost to postfix. If unset, will use the systems default CA certstore
+      postfix_multi_instance_enable:
+        type: bool
+        description: Whether to enable support for multi-instance operations
+      postfix_multi_instance_list:
+        type: list
+        elements: str
+        description: A list of postfix instances as paths to their configuration directory. Overrides postfix_multi_instance_search
+      postfix_multi_instance_search:
+        type: str
+        default: "/etc/postfix-*"
+        description: Use this pattern to automatically find postfix multi-instance direcories. postfix_multi_instance_list overrides this

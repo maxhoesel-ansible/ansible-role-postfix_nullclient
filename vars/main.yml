@@ -1,0 +1,6 @@
+postfix_config_path: /etc/postfix
+postfix_sasl_file: sasl_passwd
+
+postfix_ports:
+    SSL/TLS: 465
+    STARTTLS: 587

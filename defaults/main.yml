@@ -1,0 +1,17 @@
+---
+# defaults file for postfix_nullclient
+
+#postfix_relayhost:
+postfix_port:
+postfix_relayhost_auth: true
+#postfix_relayhost_username:
+#postfix_relayhost_password:
+
+postfix_tls: true
+postfix_tls_mode: SSL/TLS
+postfix_tls_verify_cert: true
+postfix_tls_custom_cafile: ""
+
+postfix_multi_instance_enable: true
+postfix_multi_instance_list: []
+postfix_multi_instance_search: "/etc/postfix-*"

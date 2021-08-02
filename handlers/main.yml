@@ -1,0 +1,9 @@
+---
+# handlers file for postfix_nullclient
+- name: restart postfix
+  service:
+    name: postfix
+    state: restarted
+
+- name: rehash sasl_passwd
+  command: "postmap {{ postfix_config_path }}/{{ postfix_sasl_file }}"
