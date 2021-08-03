@@ -27,7 +27,7 @@ smtp_tls_wrappermode = yes
 {% if postfix_relayhost_auth %}
 smtp_sasl_auth_enable = yes
 smtp_sasl_security_options = noanonymous
-smtp_sasl_password_maps = hash:{{ postfix_config_path }}/{{ postfix_sasl_file }}
+smtp_sasl_password_maps = hash:${config_directory}/{{ postfix_sasl_file }}
 {% endif %}
 
 {% if postfix_multi_instance_enable %}
