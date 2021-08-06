@@ -10,7 +10,7 @@ platforms:
   # - The containers run as privileged containers so that we can
   #   use systemd functionality. This *should* be possible with unpriliged
   #   containers as well, but is quite the headache.
-  - name: step-cli-ubuntu-20
+  - name: postfix-nullclient-ubuntu-20
     image: "geerlingguy/docker-ubuntu2004-ansible"
     groups:
       - ubuntu
@@ -19,7 +19,7 @@ platforms:
     privileged: true
     override_command: false
     pre_build_image: true
-  - name: step-cli-ubuntu-18
+  - name: postfix-nullclient-ubuntu-18
     image: "geerlingguy/docker-ubuntu1804-ansible"
     groups:
       - ubuntu
@@ -28,7 +28,7 @@ platforms:
     privileged: true
     override_command: false
     pre_build_image: true
-  - name: step-cli-debian-10
+  - name: postfix-nullclient-debian-10
     image: "geerlingguy/docker-debian10-ansible"
     groups:
       - debian
@@ -37,6 +37,15 @@ platforms:
     privileged: true
     override_command: false
     pre_build_image: true
+  - name: postfix-nullclient-arch
+    image: "archlinux:base"
+    command: /sbin/init
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
 
 provisioner:
   name: ansible

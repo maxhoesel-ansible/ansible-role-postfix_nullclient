@@ -12,6 +12,7 @@ Requirements
 - A host running:
   - Ubuntu 18.04 LTS or newer
   - Debian 10 or newer
+  - Arch Linux
   - Other distributions may work, but are not supported (Feel free to add support with a PR!)
 
 Role Variables
