@@ -10,6 +10,12 @@
     name: postfix
     state: present
 
+- name: SASL packages for auth are installed
+  package:
+    name: "{{ postfix_sasl_packages }}"
+    state: present
+  when: postfix_sasl_packages
+
 - name: Look for other postfix instances
   command: "find {{ postfix_multi_instance_search.split('/').0 }}/ -maxdepth 1 -type d -name 'postfix-*'"
   check_mode: false

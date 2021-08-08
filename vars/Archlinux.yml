@@ -1,1 +1,2 @@
 postfix_tls_ca_file: /etc/ssl/certs/ca-certificates.crt
+postfix_sasl_packages: []
