@@ -1,5 +1,5 @@
 # {{ ansible_managed }}
-smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+smtpd_banner = $myhostname ESMTP $mail_name ({{ ansible_os_family }})
 biff = no
 
 append_dot_mydomain = no
