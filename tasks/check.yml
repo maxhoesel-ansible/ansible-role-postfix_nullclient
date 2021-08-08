@@ -7,7 +7,7 @@
 
 - name: Verify that multi-instance list or search pattern is set
   assert:
-    that: postfix_multi_instance_list or postfix_multi_instance_search
+    that: postfix_multi_instance_list or postfix_multi_instance_search_path
   when: postfix_multi_instance_enable
 
 - name: Verify that username and passsword are set
