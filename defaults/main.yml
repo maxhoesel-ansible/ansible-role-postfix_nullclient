@@ -14,4 +14,4 @@ postfix_tls_custom_cafile: ""
 
 postfix_multi_instance_enable: true
 postfix_multi_instance_list: []
-postfix_multi_instance_search: "/etc/postfix-*"
+postfix_multi_instance_search_path: "/etc"

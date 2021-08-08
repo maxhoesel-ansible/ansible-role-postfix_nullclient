@@ -51,7 +51,7 @@ This role will automatically set the remote port to connect to based on the conn
 |------|-------------|---------|----------|
 | `postfix_multi_instance_enable` | Whether to enable support for multi-instance operations | `true` | |
 | `postfix_multi_instance_list` | A list of postfix instances as paths to their configuration directory. Overrides `postfix_multi_instance_search` | `[]` | |
-| `postfix_multi_instance_search` | Use this pattern to automatically find postfix multi-instance direcories. `postfix_multi_instance_list` overrides this | `"/etc/postfix-*"` | |
+| `postfix_multi_instance_search_path` |Search for postfix multi-instance direcories in this path (all dirs matching `postfix-*`). `postfix_multi_instance_list` overrides this | `"/etc"` | |
 
 
 Example Playbook

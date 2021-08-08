@@ -17,7 +17,7 @@
   when: postfix_sasl_packages
 
 - name: Look for other postfix instances
-  command: "find {{ postfix_multi_instance_search.split('/').0 }}/ -maxdepth 1 -type d -name 'postfix-*'"
+  command: "find {{ postfix_multi_instance_search_path }}/ -maxdepth 1 -type d -name 'postfix-*'"
   check_mode: false
   changed_when: false
   register: postfix_found_instance_paths
