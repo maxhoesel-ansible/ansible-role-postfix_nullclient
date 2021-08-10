@@ -12,6 +12,8 @@ mynetworks = 127.0.0.0/8
 inet_interfaces = loopback-only
 recipient_delimiter = +
 
+smtpd_relay_restrictions = permit_mynetworks reject_unauth_destination
+
 {% if postfix_tls %}
 smtp_tls_security_level = {% if postfix_tls_verify_cert %}verify{% else %}encrypt{% endif %}
 
