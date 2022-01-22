@@ -4,7 +4,7 @@
   tasks:
     - name: "Include postfix_nullclient"
       include_role:
-        name: "maxhoesel.postfix_nullclient"
+        name: "postfix_nullclient"
       vars:
         postfix_relayhost: mail.invalid.tld
         postfix_relayhost_username: test@invalid.tld
