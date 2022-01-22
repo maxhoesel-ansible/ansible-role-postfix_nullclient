@@ -7,7 +7,7 @@ Supports SSL/TLS auth and multi-instance operation as the primary instance.
 Requirements
 ------------
 
-- A recent Ansible version. This role supports the 3 most recent major Ansible releases.
+- A recent Ansible version. This role supports the 2 most recent major Ansible releases.
   Older versions might still work, but are not supported
 - A host running:
   - Ubuntu 18.04 LTS or newer
