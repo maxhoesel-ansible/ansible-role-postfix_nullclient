@@ -4,6 +4,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: postfix_nullclient
+
 jobs:
   lint:
     name: "CI"
@@ -13,6 +17,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          path: postfix_nullclient
 
       - name: Set up Python 3
         uses: actions/setup-python@v2
