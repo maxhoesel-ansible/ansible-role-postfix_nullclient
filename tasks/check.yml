@@ -1,10 +1,4 @@
-- name: Verify that required parameters are set
-  assert:
-    that:
-      - postfix_relayhost is defined
-      - postfix_relayhost | length > 0
-  when: ansible_version.string is version('2.11.1', '<')
-
+# code: language=ansible
 - name: Verify that multi-instance list or search pattern is set
   assert:
     that: postfix_multi_instance_list or postfix_multi_instance_search_path

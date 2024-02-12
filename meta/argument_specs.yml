@@ -4,14 +4,14 @@ argument_specs:
     options:
       postfix_relayhost:
         type: str
-        required: yes
+        required: true
         description: Hostname or IP address of the host to send mails to
       postfix_port:
         type: int
         description: Optionally overwite the automatically selecteed port (see README.md)
       postfix_relayhost_auth:
         type: bool
-        default: yes
+        default: true
         description: Set to yes if you need to login with a username and password
       postfix_relayhost_username:
         type: str
@@ -22,7 +22,7 @@ argument_specs:
       postfix_tls:
         type: bool
         description: Whether to use TLS when connecting to the relayhost
-        default: yes
+        default: true
       postfix_tls_mode:
         type: str
         choices: ["SSL/TLS", "STARTTLS"]
@@ -30,7 +30,7 @@ argument_specs:
         default: "SSL/TLS"
       postfix_tls_verify_cert:
         type: bool
-        default: yes
+        default: true
         description: Whether to verify the remote TLS cert. Only turn this off if you want to use a self-signed certificate and know what you are doing
       postfix_tls_custom_cafile:
         type: str

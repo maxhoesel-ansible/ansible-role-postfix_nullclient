@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_PIPELINING: true
+
+scenario:
+  test_sequence:
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - converge
+    - idempotence
+    - check # also run check mode in regular tests
+    - side_effect
+    - verify
+    - destroy
+
+verifier:
+  name: ansible

@@ -10,9 +10,8 @@ Requirements
 - A recent Ansible version. This role supports the 2 most recent major Ansible releases.
   Older versions might still work, but are not supported
 - A host running:
-  - Ubuntu 18.04 LTS or newer
-  - Debian 10 or newer
-  - Arch Linux
+  - Ubuntu 20.04 LTS or newer
+  - Debian 11 or newer
   - Other distributions may work, but are not supported (Feel free to add support with a PR!)
 
 Role Variables
