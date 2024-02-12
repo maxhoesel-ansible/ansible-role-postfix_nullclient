@@ -1,0 +1,21 @@
+---
+name: Version Number Automation
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  version-maintenance:
+    name: Update collection version according to PR labels
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+        - name: Check out codebase
+          uses: actions/checkout@v4
+        - uses: release-drafter/release-drafter@v5
+          id: drafter
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
