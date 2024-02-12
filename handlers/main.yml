@@ -1,9 +1,11 @@
 ---
-# handlers file for postfix_nullclient
+# code: language=ansible
 - name: restart postfix
   service:
     name: postfix
     state: restarted
+  become: yes
 
-- name: rehash sasl_passwd
+- name: rehash sasl_passwd # noqa no-changed-when
   command: "postmap {{ postfix_config_path }}/{{ postfix_sasl_file }}"
+  become: yes
