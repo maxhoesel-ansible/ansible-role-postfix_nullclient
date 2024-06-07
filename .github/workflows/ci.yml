@@ -6,14 +6,8 @@ on:
 
 jobs:
   lint:
-    name: "CI"
+    name: Lint
     runs-on: ubuntu-latest
-    strategy:
-        matrix:
-            job:
-                - molecule-ansible8
-                - molecule-ansible9
-                - lint
     steps:
       - name: Check out codebase
         uses: actions/checkout@v4
@@ -24,11 +18,46 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Set up pip
-        run: pip3 install --upgrade pip
 
-      - name: Install tox
-        run: sudo apt update && sudo apt -y install tox
+      - name: Install dependencies
+        run: |
+          pip3 install --upgrade pip
+          pip3 install -r requirements.txt
 
-      - name: Run Tox
-        run: tox -e ${{ matrix.job }}
+      - name: Run ansible-lint
+        run: ansible-lint
+
+      - name: Run pre-commit
+        run: pre-commit run --all-files
+
+  molecule:
+    name: "Molecule ${{ matrix.scenario }},${{ matrix.ansible_version }}"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        scenario:
+          - default
+        ansible_version:
+          - "2.16"
+          - "2.17"
+
+    steps:
+      - name: Check out codebase
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip3 install --upgrade pip
+          pip3 install -r requirements.txt
+          pip3 install "ansible-core~=${{ matrix.ansible_version }}"
+
+      - name: Run scenario
+        run: |
+          molecule test -s ${{ matrix.scenario }}
