@@ -1,6 +1,8 @@
 ---
 dependency:
   name: galaxy
+  options:
+    requirements-file: requirements.molecule.yml
 
 driver:
   name: docker
@@ -9,12 +11,18 @@ provisioner:
   name: ansible
   env:
     ANSIBLE_PIPELINING: true
+  inventory:
+    group_vars:
+      all:
+        # Versions to use, can be passed in from pytest
+        step_cli_version: ${STEP_CLI_VERSION:-latest}
+        step_ca_version: ${STEP_CA_VERSION:-latest}
 
 scenario:
   test_sequence:
-    - destroy
-    - dependency
     - syntax
+    - dependency
+    - destroy
     - create
     - prepare
     - converge
