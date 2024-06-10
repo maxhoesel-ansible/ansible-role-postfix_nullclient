@@ -86,7 +86,7 @@ mypy-extensions==1.0.0
     # via black
 nodeenv==1.9.1
     # via pre-commit
-packaging==24.0
+packaging==24.1
     # via
     #   ansible-compat
     #   ansible-core
@@ -122,7 +122,7 @@ referencing==0.35.1
     # via
     #   jsonschema
     #   jsonschema-specifications
-requests==2.31.0
+requests==2.32.3
     # via
     #   docker
     #   molecule-plugins
