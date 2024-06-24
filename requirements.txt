@@ -49,7 +49,7 @@ docker==7.1.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==3.15.1
+filelock==3.15.4
     # via
     #   ansible-lint
     #   virtualenv
@@ -57,7 +57,7 @@ identify==2.5.36
     # via pre-commit
 idna==3.7
     # via requests
-importlib-metadata==7.1.0
+importlib-metadata==7.2.1
     # via ansible-lint
 jinja2==3.1.4
     # via
@@ -143,15 +143,15 @@ ruamel-yaml-clib==0.2.8
     # via ruamel-yaml
 selinux==0.3.0
     # via molecule-plugins
-subprocess-tee==0.4.1
+subprocess-tee==0.4.2
     # via
     #   ansible-compat
     #   ansible-lint
-urllib3==2.2.1
+urllib3==2.2.2
     # via
     #   docker
     #   requests
-virtualenv==20.26.2
+virtualenv==20.26.3
     # via pre-commit
 wcmatch==8.5.2
     # via
