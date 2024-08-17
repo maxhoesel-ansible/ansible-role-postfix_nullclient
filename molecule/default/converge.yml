@@ -9,3 +9,6 @@
         postfix_relayhost: mail.invalid.tld
         postfix_relayhost_username: test@invalid.tld
         postfix_relayhost_password: invalidpassword
+        postfix_masquerade_domains:
+          - invalid.tld
+          - also-invalid.tld

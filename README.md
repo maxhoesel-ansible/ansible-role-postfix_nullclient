@@ -27,6 +27,12 @@ Role Variables
 | `postfix_relayhost_username` | Username used for login on the relayhost | undefined | If `postfix_relayhost_auth` is `true` |
 | `postfix_relayhost_password` | Password used for login on the relayhost | undefined | If `postfix_relayhost_auth` is `true` |
 
+### Domain Management
+
+| Name | Description | Default | Required |
+|------|-------------|---------|----------|
+| `postfix_masquerade_domains` | Truncate subdomains when sending mail for these domains | `[]` | |
+
 #### Port Auto-Selection
 
 This role will automatically set the remote port to connect to based on the connection method used:
@@ -44,6 +50,7 @@ This role will automatically set the remote port to connect to based on the conn
 | `postfix_tls_mode` | Whether to use an implicit (SSL/TLS) or explicit/upgrade (STARTTLS) TLS connetion. | `SSL/TLS` | |
 | `postfix_tls_verify_cert` | Whether to verify the remote TLS cert. Only turn this off if you want to use a self-signed certificate and know what you are doing | `true` | |
 | `postfix_tls_custom_cafile` | Optionally provide a custom CA cert for the relayhost to postfix. If unset, will use the systems default CA certstore | `""` | |
+
 ### Multi-Instance
 
 | Name | Description | Default | Required |

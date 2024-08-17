@@ -14,9 +14,12 @@ recipient_delimiter = +
 
 smtpd_relay_restrictions = permit_mynetworks reject_unauth_destination
 
+{% if postfix_masquerade_domains %}
+masquerade_domains = {{ postfix_masquerade_domains | join(', ') }}
+{% endif %}
+
 {% if postfix_tls %}
 smtp_tls_security_level = {% if postfix_tls_verify_cert %}verify{% else %}encrypt{% endif %}
-
 {% if postfix_tls_custom_cafile %}
 smtp_tls_CAfile = {{ postfix_tls_custom_cafile }}
 {% else %}

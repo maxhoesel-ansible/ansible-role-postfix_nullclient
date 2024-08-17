@@ -7,6 +7,8 @@ postfix_relayhost_auth: true
 #postfix_relayhost_username:
 #postfix_relayhost_password:
 
+postfix_masquerade_domains: []
+
 postfix_tls: true
 postfix_tls_mode: SSL/TLS
 postfix_tls_verify_cert: true
