@@ -32,6 +32,7 @@ Role Variables
 | Name | Description | Default | Required |
 |------|-------------|---------|----------|
 | `postfix_masquerade_domains` | Truncate subdomains when sending mail for these domains | `[]` | |
+| `postfix_sender_canonical` | Write these contents into a sender_canonical_maps file | `""` | |
 
 #### Port Auto-Selection
 

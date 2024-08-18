@@ -54,6 +54,16 @@
     mode: "644"
   notify: restart postfix
 
+- name: sender_canonical file is present
+  ansible.builtin.template:
+    src: sender_canonical.j2
+    dest: "{{ postfix_config_path }}/sender_canonical"
+    owner: root
+    group: root
+    mode: "644"
+  notify: restart postfix
+  when: postfix_sender_canonical
+
 - name: Postfix service is enabled and running
   service:
     name: postfix

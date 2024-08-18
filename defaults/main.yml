@@ -8,6 +8,7 @@ postfix_relayhost_auth: true
 #postfix_relayhost_password:
 
 postfix_masquerade_domains: []
+postfix_sender_canonical: ""
 
 postfix_tls: true
 postfix_tls_mode: SSL/TLS
