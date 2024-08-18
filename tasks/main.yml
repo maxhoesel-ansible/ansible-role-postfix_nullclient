@@ -6,9 +6,11 @@
 - name: Load OS-Specific vars
   include_vars: "{{ ansible_os_family }}.yml"
 
-- name: Postfix is installed
+- name: Postfix and mailutils are installed
   package:
-    name: postfix
+    name:
+      - postfix
+      - mailutils
     state: present
 
 - name: SASL packages for auth are installed
