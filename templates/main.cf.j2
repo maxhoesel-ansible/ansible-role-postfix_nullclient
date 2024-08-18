@@ -20,6 +20,7 @@ masquerade_domains = {{ postfix_masquerade_domains | join(', ') }}
 
 {% if postfix_tls %}
 smtp_tls_security_level = {% if postfix_tls_verify_cert %}verify{% else %}encrypt{% endif %}
+
 {% if postfix_tls_custom_cafile %}
 smtp_tls_CAfile = {{ postfix_tls_custom_cafile }}
 {% else %}
