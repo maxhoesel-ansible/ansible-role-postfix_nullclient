@@ -16,7 +16,7 @@ ansible-core==2.17.3
     #   molecule
 ansible-lint==24.7.0
     # via -r requirements.in
-attrs==24.1.0
+attrs==24.2.0
     # via
     #   jsonschema
     #   referencing
@@ -26,7 +26,7 @@ bracex==2.5
     # via wcmatch
 certifi==2024.7.4
     # via requests
-cffi==1.16.0
+cffi==1.17.0
     # via cryptography
 cfgv==3.4.0
     # via pre-commit
@@ -110,7 +110,7 @@ pycparser==2.22
     # via cffi
 pygments==2.18.0
     # via rich
-pyyaml==6.0.1
+pyyaml==6.0.2
     # via
     #   ansible-compat
     #   ansible-core
@@ -133,7 +133,7 @@ rich==13.7.1
     #   ansible-lint
     #   enrich
     #   molecule
-rpds-py==0.19.1
+rpds-py==0.20.0
     # via
     #   jsonschema
     #   referencing
@@ -159,5 +159,5 @@ wcmatch==9.0
     #   molecule
 yamllint==1.35.1
     # via ansible-lint
-zipp==3.19.2
+zipp==3.20.0
     # via importlib-metadata
