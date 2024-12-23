@@ -16,7 +16,7 @@ ansible-core==2.18.1
     #   molecule
 ansible-lint==24.12.2
     # via -r requirements.in
-attrs==24.2.0
+attrs==24.3.0
     # via
     #   jsonschema
     #   referencing
@@ -32,7 +32,7 @@ cfgv==3.4.0
     # via pre-commit
 charset-normalizer==3.4.0
     # via requests
-click==8.1.7
+click==8.1.8
     # via
     #   black
     #   click-help-colors
@@ -59,7 +59,7 @@ idna==3.10
     # via requests
 importlib-metadata==8.5.0
     # via ansible-lint
-jinja2==3.1.4
+jinja2==3.1.5
     # via
     #   ansible-core
     #   molecule
@@ -146,7 +146,7 @@ subprocess-tee==0.4.2
     # via
     #   ansible-compat
     #   ansible-lint
-urllib3==2.2.3
+urllib3==2.3.0
     # via
     #   docker
     #   requests
