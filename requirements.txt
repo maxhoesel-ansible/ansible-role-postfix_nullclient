@@ -30,7 +30,7 @@ cffi==1.17.1
     # via cryptography
 cfgv==3.4.0
     # via pre-commit
-charset-normalizer==3.4.0
+charset-normalizer==3.4.1
     # via requests
 click==8.1.8
     # via
@@ -53,7 +53,7 @@ filelock==3.16.1
     # via
     #   ansible-lint
     #   virtualenv
-identify==2.6.3
+identify==2.6.4
     # via pre-commit
 idna==3.10
     # via requests
