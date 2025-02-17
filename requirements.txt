@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-ansible-compat==25.1.1
+ansible-compat==25.1.2
     # via
     #   ansible-lint
     #   molecule
@@ -39,7 +39,7 @@ click==8.1.8
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==44.0.0
+cryptography==44.0.1
     # via ansible-core
 distlib==0.3.9
     # via virtualenv
@@ -53,7 +53,7 @@ filelock==3.17.0
     # via
     #   ansible-lint
     #   virtualenv
-identify==2.6.6
+identify==2.6.7
     # via pre-commit
 idna==3.10
     # via requests
@@ -152,7 +152,7 @@ urllib3==2.3.0
     # via
     #   docker
     #   requests
-virtualenv==20.29.1
+virtualenv==20.29.2
     # via pre-commit
 wcmatch==10.0
     # via
