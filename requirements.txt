@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-ansible-compat==25.1.4
+ansible-compat==25.1.5
     # via
     #   ansible-lint
     #   molecule
@@ -146,13 +146,13 @@ subprocess-tee==0.4.2
     # via
     #   ansible-compat
     #   ansible-lint
-typing-extensions==4.13.0
+typing-extensions==4.13.1
     # via referencing
 urllib3==2.3.0
     # via
     #   docker
     #   requests
-virtualenv==20.29.3
+virtualenv==20.30.0
     # via pre-commit
 wcmatch==10.0
     # via
