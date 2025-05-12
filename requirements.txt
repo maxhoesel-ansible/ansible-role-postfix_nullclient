@@ -32,7 +32,7 @@ cfgv==3.4.0
     # via pre-commit
 charset-normalizer==3.4.2
     # via requests
-click==8.1.8
+click==8.2.0
     # via
     #   black
     #   click-help-colors
@@ -98,7 +98,7 @@ pathspec==0.12.1
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.3.7
+platformdirs==4.3.8
     # via
     #   black
     #   virtualenv
@@ -152,7 +152,7 @@ urllib3==2.4.0
     # via
     #   docker
     #   requests
-virtualenv==20.30.0
+virtualenv==20.31.2
     # via pre-commit
 wcmatch==10.0
     # via
