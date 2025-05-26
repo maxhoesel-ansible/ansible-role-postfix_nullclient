@@ -32,14 +32,14 @@ cfgv==3.4.0
     # via pre-commit
 charset-normalizer==3.4.2
     # via requests
-click==8.2.0
+click==8.2.1
     # via
     #   black
     #   click-help-colors
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==45.0.2
+cryptography==45.0.3
     # via ansible-core
 distlib==0.3.9
     # via virtualenv
@@ -53,7 +53,7 @@ filelock==3.18.0
     # via
     #   ansible-lint
     #   virtualenv
-identify==2.6.10
+identify==2.6.12
     # via pre-commit
 idna==3.10
     # via requests
@@ -104,7 +104,7 @@ platformdirs==4.3.8
     #   virtualenv
 pluggy==1.6.0
     # via molecule
-pre-commit==3.8.0
+pre-commit==4.2.0
     # via -r requirements.in
 pycparser==2.22
     # via cffi
@@ -133,11 +133,11 @@ rich==14.0.0
     # via
     #   enrich
     #   molecule
-rpds-py==0.25.0
+rpds-py==0.25.1
     # via
     #   jsonschema
     #   referencing
-ruamel-yaml==0.18.10
+ruamel-yaml==0.18.11
     # via ansible-lint
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
