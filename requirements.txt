@@ -63,7 +63,7 @@ jinja2==3.1.6
     # via
     #   ansible-core
     #   molecule
-jsonschema==4.23.0
+jsonschema==4.24.0
     # via
     #   ansible-compat
     #   ansible-lint
@@ -137,7 +137,7 @@ rpds-py==0.25.1
     # via
     #   jsonschema
     #   referencing
-ruamel-yaml==0.18.11
+ruamel-yaml==0.18.12
     # via ansible-lint
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
@@ -161,5 +161,5 @@ wcmatch==10.0
     #   molecule
 yamllint==1.37.1
     # via ansible-lint
-zipp==3.21.0
+zipp==3.22.0
     # via importlib-metadata
