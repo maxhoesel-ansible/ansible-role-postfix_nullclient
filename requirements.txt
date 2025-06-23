@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-ansible-compat==25.5.0
+ansible-compat==25.6.0
     # via
     #   ansible-lint
     #   molecule
@@ -22,7 +22,7 @@ attrs==25.3.0
     #   referencing
 black==25.1.0
     # via ansible-lint
-bracex==2.5.post1
+bracex==2.6
     # via wcmatch
 certifi==2025.6.15
     # via requests
@@ -108,7 +108,7 @@ pre-commit==4.2.0
     # via -r requirements.in
 pycparser==2.22
     # via cffi
-pygments==2.19.1
+pygments==2.19.2
     # via rich
 pyyaml==6.0.2
     # via
@@ -149,13 +149,13 @@ subprocess-tee==0.4.2
     #   ansible-lint
 typing-extensions==4.14.0
     # via referencing
-urllib3==2.4.0
+urllib3==2.5.0
     # via
     #   docker
     #   requests
 virtualenv==20.31.2
     # via pre-commit
-wcmatch==10.0
+wcmatch==10.1
     # via
     #   ansible-lint
     #   molecule
