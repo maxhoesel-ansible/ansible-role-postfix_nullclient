@@ -129,7 +129,7 @@ requests==2.32.4
     #   molecule-plugins
 resolvelib==1.0.1
     # via ansible-core
-rich==14.0.0
+rich==14.1.0
     # via
     #   enrich
     #   molecule
@@ -153,7 +153,7 @@ urllib3==2.5.0
     # via
     #   docker
     #   requests
-virtualenv==20.31.2
+virtualenv==20.32.0
     # via pre-commit
 wcmatch==10.1
     # via
