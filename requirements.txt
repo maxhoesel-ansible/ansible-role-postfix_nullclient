@@ -24,7 +24,7 @@ black==25.1.0
     # via ansible-lint
 bracex==2.6
     # via wcmatch
-certifi==2025.7.14
+certifi==2025.8.3
     # via requests
 cffi==1.17.1
     # via cryptography
@@ -153,7 +153,7 @@ urllib3==2.5.0
     # via
     #   docker
     #   requests
-virtualenv==20.32.0
+virtualenv==20.33.0
     # via pre-commit
 wcmatch==10.1
     # via
