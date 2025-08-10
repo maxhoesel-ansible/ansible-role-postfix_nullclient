@@ -104,7 +104,7 @@ platformdirs==4.3.8
     #   virtualenv
 pluggy==1.6.0
     # via molecule
-pre-commit==4.2.0
+pre-commit==4.3.0
     # via -r requirements.in
 pycparser==2.22
     # via cffi
