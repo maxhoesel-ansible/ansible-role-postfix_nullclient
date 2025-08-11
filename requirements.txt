@@ -30,7 +30,7 @@ cffi==1.17.1
     # via cryptography
 cfgv==3.4.0
     # via pre-commit
-charset-normalizer==3.4.2
+charset-normalizer==3.4.3
     # via requests
 click==8.2.1
     # via
@@ -39,7 +39,7 @@ click==8.2.1
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==45.0.5
+cryptography==45.0.6
     # via ansible-core
 distlib==0.4.0
     # via virtualenv
@@ -53,7 +53,7 @@ filelock==3.18.0
     # via
     #   ansible-lint
     #   virtualenv
-identify==2.6.12
+identify==2.6.13
     # via pre-commit
 idna==3.10
     # via requests
@@ -133,7 +133,7 @@ rich==14.1.0
     # via
     #   enrich
     #   molecule
-rpds-py==0.26.0
+rpds-py==0.27.0
     # via
     #   jsonschema
     #   referencing
@@ -153,7 +153,7 @@ urllib3==2.5.0
     # via
     #   docker
     #   requests
-virtualenv==20.33.0
+virtualenv==20.33.1
     # via pre-commit
 wcmatch==10.1
     # via
