@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-ansible-compat==25.8.0
+ansible-compat==25.8.1
     # via
     #   ansible-lint
     #   molecule
@@ -49,7 +49,7 @@ docker==7.1.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==3.18.0
+filelock==3.19.1
     # via
     #   ansible-lint
     #   virtualenv
@@ -70,7 +70,7 @@ jsonschema==4.25.0
     #   molecule
 jsonschema-specifications==2025.4.1
     # via jsonschema
-markdown-it-py==3.0.0
+markdown-it-py==4.0.0
     # via rich
 markupsafe==3.0.2
     # via jinja2
@@ -153,7 +153,7 @@ urllib3==2.5.0
     # via
     #   docker
     #   requests
-virtualenv==20.33.1
+virtualenv==20.34.0
     # via pre-commit
 wcmatch==10.1
     # via
