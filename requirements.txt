@@ -14,7 +14,7 @@ ansible-core==2.18.7
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==25.8.2
+ansible-lint==25.9.0
     # via -r requirements.in
 attrs==25.3.0
     # via
@@ -27,7 +27,9 @@ bracex==2.6
 certifi==2025.8.3
     # via requests
 cffi==2.0.0
-    # via cryptography
+    # via
+    #   ansible-lint
+    #   cryptography
 cfgv==3.4.0
     # via pre-commit
 charset-normalizer==3.4.3
@@ -40,11 +42,15 @@ click==8.2.1
 click-help-colors==0.9.4
     # via molecule
 cryptography==45.0.7
-    # via ansible-core
+    # via
+    #   ansible-core
+    #   ansible-lint
 distlib==0.4.0
     # via virtualenv
 distro==1.9.0
-    # via selinux
+    # via
+    #   ansible-lint
+    #   selinux
 docker==7.1.0
     # via molecule-plugins
 enrich==1.2.7
@@ -140,7 +146,9 @@ rpds-py==0.27.1
 ruamel-yaml==0.18.15
     # via ansible-lint
 ruamel-yaml-clib==0.2.12
-    # via ruamel-yaml
+    # via
+    #   ansible-lint
+    #   ruamel-yaml
 selinux==0.3.0
     # via molecule-plugins
 subprocess-tee==0.4.2
