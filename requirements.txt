@@ -86,7 +86,7 @@ molecule==25.9.0
     # via
     #   -r requirements.in
     #   molecule-plugins
-molecule-plugins[docker]==23.7.0
+molecule-plugins[docker]==25.8.12
     # via -r requirements.in
 mypy-extensions==1.1.0
     # via black
