@@ -17,14 +17,14 @@
   package:
     name: "{{ postfix_sasl_packages }}"
     state: present
-  when: postfix_sasl_packages
+  when: postfix_sasl_packages | length > 0
 
 - name: Look for other postfix instances
   command: "find {{ postfix_multi_instance_search_path }}/ -maxdepth 1 -type d -name 'postfix-*'"
   check_mode: false
   changed_when: false
   register: postfix_found_instance_paths
-  when: not postfix_multi_instance_list
+  when: postfix_multi_instance_list | length == 0
 
 - name: Set relayhost port (TLS)
   set_fact:
@@ -33,7 +33,7 @@
 - name: Set relayhost port (plain)
   set_fact:
     postfix_port: 25
-  when: not postfix_port and not postfix_tls
+  when: not (postfix_port | bool) and not postfix_tls
 
 - name: SASL login credentials are present
   template:
@@ -62,7 +62,7 @@
     group: root
     mode: "644"
   notify: restart postfix
-  when: postfix_sender_canonical
+  when: postfix_sender_canonical | length > 0
 
 - name: Postfix service is enabled and running
   service:
